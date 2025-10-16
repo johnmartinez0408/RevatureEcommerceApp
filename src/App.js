@@ -9,6 +9,8 @@ import AboutPage from './components/Pages/About/AboutPage';
 import ContactPage from './components/Pages/Contact/ContactPage';
 
 import {BrowserRouter, Routes, Route} from "react-router-dom"
+import LoginPage from './components/Pages/Login/LoginPage';
+import RegistrationPage from './components/Pages/Registration/RegistrationPage';
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
       
       
         <BrowserRouter>
-        <Navbar/>
+        
         <div className='container wrapper'>
           <Routes>
             <Route path="/" element={<HomePage/>} />
@@ -24,6 +26,8 @@ function App() {
             <Route path="/contact" element={<ContactPage/>} />
             <Route path="/products" element={<ProductsPage/>} />
             <Route path="/products/:id" element={<ProductDetailsPage/>}/>
+            <Route path="/login" element={<LoginPage/>}/>
+            <Route path="/register" element={<RegistrationPage/>}/>
           </Routes>
         </div>
         </BrowserRouter>

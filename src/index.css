@@ -17,3 +17,19 @@ code {
 hr{
   border-color:rgb(117, 117, 117);
 }
+
+.marg-top-20{
+  margin-top:20px;
+}
+
+.pad-35{
+  padding:35px;
+}
+
+.shadow{
+  box-shadow: 0.8px 1.6px 7px hsl(0deg 0% 0% / 0.48) !important;
+}
+
+input:not(.is-invalid):not(input[type=submit]){
+  border-color: #888888 !important;
+}

@@ -1,6 +1,8 @@
+import Navbar from "../../Common/Navbar";
 const ContactPage = ()=>{
     return (
         <>
+            <Navbar/>
             <div className="jumbotron text-center bg-light">
                 <h1 className="display-4">Contact</h1>
                 <p className="lead">Get in touch with our team for any questions or concerns</p>

@@ -1,6 +1,8 @@
+import Navbar from "../../Common/Navbar";
 const AboutPage = ()=>{
     return (
         <>
+            <Navbar/>
             <div className="jumbotron text-center bg-light">
                 <h1 className="display-4">About</h1>
                 <p className="lead">Learn about our store and company</p>
