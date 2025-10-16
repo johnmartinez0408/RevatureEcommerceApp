@@ -18,8 +18,6 @@ function App() {
       
       
         <BrowserRouter>
-        
-        <div className='container wrapper'>
           <Routes>
             <Route path="/" element={<HomePage/>} />
             <Route path="/about" element={<AboutPage/>} />
@@ -29,7 +27,6 @@ function App() {
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/register" element={<RegistrationPage/>}/>
           </Routes>
-        </div>
         </BrowserRouter>
      
       

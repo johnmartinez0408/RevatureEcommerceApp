@@ -6,8 +6,10 @@ const HomePage = ()=>{
     return(
         <div>
             <Navbar/>
-            <Header/>
-            <CategoryList/>
+            <div className='container wrapper'>
+                <Header/>
+                <CategoryList/>
+            </div>
         </div>
     )
 }

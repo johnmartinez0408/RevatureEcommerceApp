@@ -47,7 +47,7 @@ const Navbar = ()=>{
                 </div>
                 <div className="col-md-2">
                     {
-                        loggedIn? <Link className="btn btn-danger float-right" to="/login" onClick={onLogoutHandler}>Logout</Link> :<Link to="/" className="btn btn-primary float-right">Login</Link>
+                        loggedIn? <Link className="btn btn-danger float-right" to="/login" onClick={onLogoutHandler}>Logout</Link> :<Link to="/login" className="btn btn-primary float-right">Login</Link>
 
                     }
                 </div>

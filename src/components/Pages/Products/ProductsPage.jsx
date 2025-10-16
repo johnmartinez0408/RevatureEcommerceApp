@@ -4,7 +4,9 @@ const ProductsPage = ()=>{
     return(
         <div>
             <Navbar/>
-            <ProductsList/>
+            <div className='container wrapper'>
+                <ProductsList/>
+            </div>
         </div>
     )
 }

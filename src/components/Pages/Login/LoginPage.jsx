@@ -48,11 +48,11 @@ const LoginPage = ()=>{
     return (
         <>
             <Navbar/>
-            <div className="container">
+            <div className='container wrapper'>
                 <div className="row">
                     <div className="col-md-2"></div>
                     <div className="col-md-8">
-                        <div className="wrapper card container pad-35 shadow">
+                        <div className="card pad-35 shadow">
                             <h1>Login</h1>
                             <hr />
                             <Formik
