@@ -18,8 +18,16 @@ hr{
   border-color:rgb(117, 117, 117);
 }
 
+.marg-0-important{
+  margin: 0px !important;
+}
+
 .marg-top-20{
   margin-top:20px;
+}
+
+.marg-top-40{
+  margin-top:40px;
 }
 
 .pad-35{
@@ -32,4 +40,29 @@ hr{
 
 input:not(.is-invalid):not(input[type=submit]){
   border-color: #888888 !important;
+}
+
+.navbar{
+  background-color:rgb(91, 15, 136);
+}
+
+.my-card{
+  background:white;
+  border-radius:5px;
+  margin:0px 0px 0px 0px;
+  padding:30px;
+}
+
+.cart-quantity-btn{
+  border: none;
+  background: none;
+  border-radius: 5px;
+  vertical-align: center;
+  width:30px;
+  height: 30px;
+  margin:0px;
+  padding:0px;
+  text-align:center;
+  font-size: 16px;
+  display:inline;
 }

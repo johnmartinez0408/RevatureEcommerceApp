@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import Navbar from "../../Common/Navbar";
+import { addToCart } from "../../redux/actions/cart-actions";
+import { useDispatch } from "react-redux";
 
 const ProductDetailsPage = () => {
+
+    const dispatch = useDispatch();
 
     let params = useParams();
     const [product, setProduct] = useState({});
@@ -21,7 +25,12 @@ const ProductDetailsPage = () => {
         getData();
     }, [productId])
 
+    const onAddToCartHandler = ()=>{
+        dispatch(addToCart(product));
+    }
 
+    //For back button
+    const navigate = useNavigate();
 
     return (
         <>
@@ -30,22 +39,22 @@ const ProductDetailsPage = () => {
                 <div className="card" style={{ width: "100%" }}>
                     <div className="card">
                         <div className="container" style={{ margin: "20px" }}>
-                            <Link to="/products" className="btn btn-primary">Back</Link>
+                            <button onClick={() => navigate(-1)} className="btn btn-primary">Back</button>
                         </div>
                         <div className="card-body text-center" style={{ marginBottom: "50px" }}>
                             <h1 className="card-title">{product.title}</h1>
-                            <span class="badge badge-secondary">{product.category?.name}</span>
+                            <span className="badge badge-secondary">{product.category?.name}</span>
                             <h4>${product.price}</h4>
                             {
-                                product.images?.map((imageUrl) => {
+                                product.images?.map((imageUrl, index) => {
                                     return (
-                                        <img className="img-thumbnail" style={{ width: "300px", height: "300px" }} src={imageUrl} />
+                                        <img key={index} className="img-thumbnail" style={{ width: "300px", height: "300px" }} src={imageUrl} />
                                     )
                                 })
                             }
 
                             <p style={{ padding: "20px", fontSize: "20px" }}>{product.description}</p>
-                            <button className="btn btn-primary">Add to cart</button>
+                            <button onClick={onAddToCartHandler} className="btn btn-primary">Add to cart</button>
                         </div>
                     </div>
                 </div>

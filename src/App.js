@@ -11,6 +11,7 @@ import ContactPage from './components/Pages/Contact/ContactPage';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import LoginPage from './components/Pages/Login/LoginPage';
 import RegistrationPage from './components/Pages/Registration/RegistrationPage';
+import CartPage from './components/Pages/Cart/CartPage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/products/:id" element={<ProductDetailsPage/>}/>
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/register" element={<RegistrationPage/>}/>
+            <Route path="/cart" element={<CartPage/>}/>
           </Routes>
         </BrowserRouter>
      
