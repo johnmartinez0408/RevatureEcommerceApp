@@ -3,8 +3,8 @@ const ContactPage = ()=>{
     return (
         <>
             <Navbar/>
-            <div className='container wrapper'>
-                <div className="jumbotron text-center bg-light">
+            <div className='container wrapper bg-light shadow'>
+                <div className="jumbotron text-center " style={{background:"none"}}>
                     <h1 className="display-4">Contact</h1>
                     <p className="lead">Get in touch with our team for any questions or concerns</p>
                     <div className="container">
@@ -23,7 +23,9 @@ const ContactPage = ()=>{
                                     <label for="exampleFormControlTextarea1">Message</label>
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <div className="col-md-12 text-center">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
                                 </form>
                         </section>
                     </div>

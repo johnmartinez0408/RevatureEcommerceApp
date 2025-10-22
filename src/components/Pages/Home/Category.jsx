@@ -6,7 +6,7 @@ const Category = (props)=>{
 
     return (
         <div className=" col-md-4">
-            <div className="card">
+            <div className="card marg-bot-20">
                 <div className="card-body text-center">
                     <Link to={`/products`} className="text-dark">
                         <h5 className="card-title">{name}</h5>

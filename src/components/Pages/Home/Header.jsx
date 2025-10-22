@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Header = ()=>{
     return (
-        <div className="jumbotron card bg-light" style={{marginBottom:"0px"}}>
+        <div className="jumbotron" style={{marginBottom:"0px", background: "none"}}>
             <h1 className="display-4">Welcome to our shop!</h1>
             <p className="lead">We have prodcuts of several categories. Please browse below.</p>
             <hr className="my-4"/>

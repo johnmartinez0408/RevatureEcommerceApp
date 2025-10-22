@@ -17,7 +17,7 @@ const CategoryList = ()=>{
     },[])
 
     return (
-        <div className="card" style={{width: "100%"}}>
+        <div className="" style={{width: "100%"}}>
             <div className="card-body">
                 <h2 className="card-title">Categories</h2>
                 <p className="card-text">Browse product categories</p>

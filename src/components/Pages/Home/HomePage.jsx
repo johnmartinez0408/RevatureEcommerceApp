@@ -6,7 +6,7 @@ const HomePage = ()=>{
     return(
         <div>
             <Navbar/>
-            <div className='container wrapper'>
+            <div className='container wrapper shadow bg-light'>
                 <Header/>
                 <CategoryList/>
             </div>

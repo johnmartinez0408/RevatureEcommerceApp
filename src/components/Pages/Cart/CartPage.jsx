@@ -7,26 +7,6 @@ import CartSummary from "./CartSummary";
 const CartPage = () => {
 
     const cartData = useSelector((state)=>{return state})
-    const dummyData = [
-        {
-            id: 17,
-            title: "Classic Black T-Shirt",
-            slug: "classic-black-t-shirt",
-            price: 354,
-            description: "Elevate your everyday style with our Classic Black T-Shirt. This staple piece is crafted from soft, breathable cotton for all-day comfort. Its versatile design features a classic crew neck and short sleeves, making it perfect for layering or wearing on its own. Durable and easy to care for, it's sure to become a favorite in your wardrobe.",
-            images: ["https://i.imgur.com/9DqEOV5.jpeg"],
-            quantity: 1
-        },
-        {
-            id: 31,
-            title: "Modern Elegance Teal Armchair",
-            slug: "modern-elegance-teal-armchair",
-            price: 25,
-            description: "Elevate your living space with this beautifully crafted armchair, featuring a sleek wooden frame that complements its vibrant teal upholstery. Ideal for adding a pop of color and contemporary style to any room, this chair provides both superb comfort and sophisticated design. Perfect for reading, relaxing, or creating a cozy conversation nook.",
-            images: ["https://i.imgur.com/6wkyyIN.jpeg"],
-            quantity: 3
-        }
-    ];
 
     return (
         <>

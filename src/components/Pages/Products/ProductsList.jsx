@@ -17,7 +17,7 @@ const ProductsList = ()=>{
     },[])
 
     return (
-        <div className="card" style={{width: "100%"}}>
+        <div className="" style={{width: "100%"}}>
             <div className="card-body">
                 <h1 className="card-title">Products</h1>
                 <p className="card-text">Browse our full list of products</p>

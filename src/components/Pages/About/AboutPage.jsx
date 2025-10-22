@@ -3,8 +3,8 @@ const AboutPage = ()=>{
     return (
         <>
             <Navbar/>
-            <div className='container wrapper'>
-                <div className="jumbotron text-center bg-light">
+            <div className='container wrapper bg-light shadow'>
+                <div className="jumbotron text-center" style={{background:"none"}}>
                     <h1 className="display-4">About</h1>
                     <p className="lead">Learn about our store and company</p>
                     <div className="container">

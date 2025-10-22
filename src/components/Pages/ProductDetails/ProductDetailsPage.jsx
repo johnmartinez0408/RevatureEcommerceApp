@@ -25,7 +25,7 @@ const ProductDetailsPage = () => {
         getData();
     }, [productId])
 
-    const onAddToCartHandler = ()=>{
+    const onAddToCartHandler = () => {
         dispatch(addToCart(product));
     }
 
@@ -35,13 +35,15 @@ const ProductDetailsPage = () => {
     return (
         <>
             <Navbar />
-            <div className='container wrapper'>
-                <div className="card" style={{ width: "100%" }}>
-                    <div className="card">
+            <div className='container wrapper shadow bg-light'>
+                <div className="" style={{ width: "100%" }}>
+
+
+                    <div className="card-body" style={{ marginBottom: "50px" }}>
                         <div className="container" style={{ margin: "20px" }}>
                             <button onClick={() => navigate(-1)} className="btn btn-primary">Back</button>
                         </div>
-                        <div className="card-body text-center" style={{ marginBottom: "50px" }}>
+                        <div className="text-center">
                             <h1 className="card-title">{product.title}</h1>
                             <span className="badge badge-secondary">{product.category?.name}</span>
                             <h4>${product.price}</h4>
@@ -54,9 +56,11 @@ const ProductDetailsPage = () => {
                             }
 
                             <p style={{ padding: "20px", fontSize: "20px" }}>{product.description}</p>
-                            <button onClick={onAddToCartHandler} className="btn btn-primary">Add to cart</button>
+                            <button onClick={onAddToCartHandler} className="btn btn-primary marg-bot-40">Add to cart</button>
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </>
