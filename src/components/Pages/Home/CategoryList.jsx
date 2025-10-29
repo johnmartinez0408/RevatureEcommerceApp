@@ -6,7 +6,7 @@ const CategoryList = ()=>{
     const [categories, setCategories] = useState([]);
 
     const getData = ()=>{
-        fetch("https://api.escuelajs.co/api/v1/categories")
+        fetch("http://localhost:9191/api/category")
             .then((results)=> results.json())
             .then((data)=> setCategories(data))
             .catch((error)=>console.log(error))
@@ -25,7 +25,7 @@ const CategoryList = ()=>{
                 {
                     categories.map((categoryData)=>{
                         return (
-                            <Category data={categoryData} key={categoryData.id}/>
+                            <Category data={categoryData} key={categoryData.categoryId}/>
                         )
                     })
                 }

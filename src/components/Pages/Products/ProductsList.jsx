@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
 import Product from "./Product";
+import { useParams } from "react-router-dom";
 
 const ProductsList = ()=>{
     
     const [products, setProducts] = useState([]);
+    let params = useParams();
+    const categoryId = params.id;
 
     const getData = ()=>{
-        fetch("https://api.escuelajs.co/api/v1/products")
+        fetch(`http://localhost:9191/api/product/category/${categoryId}`)
             .then((results)=> results.json())
-            .then((data)=> setProducts(data))
+            .then((data)=> {
+                setProducts(data);
+                console.log(data);
+            })
             .catch((error)=>console.log(error))
     }
     
@@ -23,9 +29,9 @@ const ProductsList = ()=>{
                 <p className="card-text">Browse our full list of products</p>
                 <div className="row">
                 {
-                    products.map((productsData)=>{
+                    products.map((productsData, index)=>{
                         return (
-                            <Product data={productsData} key={productsData.id}/>
+                            <Product data={productsData} key={index}/>
                         )
                     })
                 }
