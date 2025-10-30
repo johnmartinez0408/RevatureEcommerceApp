@@ -19,14 +19,16 @@ const LoginPage = ()=>{
     const [requestResponse, setRequestResponse] = useState({message:"", alertClass:""});
 
     const onSubmit=(values)=>{
+        const payload = {usernameOrEmail: values.email, password:values.password}
         console.log("Form Data: " , values);
-        axios.post("https://api.escuelajs.co/api/v1/auth/login", values)
+        axios.post("http://localhost:9100/api/auth/login", payload)
             .then(
                  //success
                 (response)=>{
                     console.log(response.data)
                     setRequestResponse({message:"Login Successful!", alertClass:"alert alert-success"})
-                    localStorage.setItem("token", response.data.access_token);
+                    console.log(response.data);
+                    localStorage.setItem("token", response.data);
                     navigate("/")
                 }
             ,
@@ -75,7 +77,7 @@ const LoginPage = ()=>{
                                                 className={formik.errors.email && formik.touched.email?"form-control is-invalid": "form-control" } 
                                                 type="text" 
                                                 name="email" 
-                                                placeholder="Email"
+                                                placeholder="Email or Username"
                                             />
                                             <ErrorMessage name="email">
                                             { 

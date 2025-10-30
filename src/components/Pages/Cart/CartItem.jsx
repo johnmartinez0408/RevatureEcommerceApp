@@ -22,17 +22,19 @@ const CartItem = (props) => {
 
             <div className="row marg-top-20">
                 <div className="col-md-12">
-                    <h3>{cartItem.title}</h3>
+                    <Link to={`/products/${cartItem.productId}`} className="text-dark">
+                        <h3>{cartItem.productName}</h3>
+                    </Link>
                 </div>
             </div>
             <div className="row">
                 <div className="col-md-4">
-                    <Link to={`/products/${cartItem.id}`} className="text-dark">
-                        <img className="rounded" src={cartItem.images ? cartItem.images[0] : null} style={{ width: "100%" }} alt="" />
+                    <Link to={`/products/${cartItem.productId}`} className="text-dark">
+                        <img className="rounded" src={cartItem.image} style={{ maxWidth: "100%" }} alt="" />
                     </Link>
                 </div>
                 <div className="col-md-6">
-                    <p>{cartItem.description}</p>
+                    <p>{cartItem.productDescription}</p>
                 </div>
                 <div className="col-md-2">
                     <div className="row">

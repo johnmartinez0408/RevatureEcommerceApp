@@ -31,6 +31,10 @@ hr{
   margin-top:40px;
 }
 
+.marg-bot-0{
+  margin-bottom:0px;
+}
+
 .marg-bot-20{
   margin-bottom:20px;
 }
@@ -78,4 +82,8 @@ textarea{
   text-align:center;
   font-size: 16px;
   display:inline;
+}
+
+.btn.back-btn{
+  margin: 20px 20px 0px 20px ;
 }

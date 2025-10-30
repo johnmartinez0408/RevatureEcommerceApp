@@ -1,13 +1,19 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../Common/Navbar";
 import CartItem from "./CartItem";
 import CartSummary from "./CartSummary";
+import { emptyCart } from "../../redux/actions/cart-actions";
 
 
 const CartPage = () => {
 
     const cartData = useSelector((state)=>{return state})
-
+    const dispatch = useDispatch();
+    console.log(cartData);
+    const emptyCartHandler = () => {
+        console.log("Emptying cart")
+        dispatch(emptyCart());
+    }
     return (
         <>
             <Navbar />
@@ -25,10 +31,10 @@ const CartPage = () => {
                             </div>
                             {
                                 cartData.carts.map((item) => {
-                                    return <CartItem data={item} key={item.id} />
+                                    return <CartItem data={item} key={item.productId} />
                                 })
                             }
-
+                            <button className="btn btn-danger" onClick={emptyCartHandler}>Empty Cart</button>
                         </div>
                     </div>
                     <div className="col-md-4">

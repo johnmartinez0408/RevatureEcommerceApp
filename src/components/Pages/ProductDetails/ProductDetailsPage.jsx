@@ -13,10 +13,11 @@ const ProductDetailsPage = () => {
     // const productId =40;
     const productId = params.id;
     const getData = () => {
-        fetch(`https://api.escuelajs.co/api/v1/products/${productId}`)
+        fetch(`http://localhost:9104/api/product/${productId}`)
             .then((results) => results.json())
             .then((data) => {
                 setProduct(data);
+                console.log(data);
             })
             .catch((error) => console.log(error))
     }
@@ -40,22 +41,24 @@ const ProductDetailsPage = () => {
 
 
                     <div className="card-body" style={{ marginBottom: "50px" }}>
-                        <div className="container" style={{ margin: "20px" }}>
-                            <button onClick={() => navigate(-1)} className="btn btn-primary">Back</button>
+                        <div className="row">
+                            <div className="col-md-12">
+                                <button onClick={() => navigate(-1)} className="btn btn-primary back-btn">Back</button>
+                            </div>
+
                         </div>
+
                         <div className="text-center">
-                            <h1 className="card-title">{product.title}</h1>
-                            <span className="badge badge-secondary">{product.category?.name}</span>
+                            <h1 className="card-title">{product.productName}</h1>
+                            <span className="badge badge-secondary">{product.categoryName}</span>
                             <h4>${product.price}</h4>
                             {
-                                product.images?.map((imageUrl, index) => {
-                                    return (
-                                        <img key={index} className="img-thumbnail" style={{ width: "300px", height: "300px" }} src={imageUrl} />
-                                    )
-                                })
-                            }
+                                product.image ? <img className="img-thumbnail" style={{ width: "300px", height: "300px" }} src={product.image} /> : <></>
 
-                            <p style={{ padding: "20px", fontSize: "20px" }}>{product.description}</p>
+                            }
+                            <h2 className="marg-top-20 h6">Brand: <span className="text-primary h5">{product.brand}</span></h2>
+                            <p>{product.quantity} left in stock</p>
+                            <p style={{ padding: "20px", fontSize: "20px" }}>{product.productDescription}</p>
                             <button onClick={onAddToCartHandler} className="btn btn-primary marg-bot-40">Add to cart</button>
                         </div>
 

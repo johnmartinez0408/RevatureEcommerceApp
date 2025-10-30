@@ -33,3 +33,9 @@ export const getCartTotalAmount = () => {
         type: ActionType.GET_TOTAL_CART_AMOUNT,
     }
 }
+
+export const emptyCart = () => {
+    return {
+        type: ActionType.EMPTY_CART,
+    }
+}

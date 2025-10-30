@@ -26,7 +26,7 @@ export const cartReducer = (state = initialState, { type, payload }) => {
             } else {
                 let isExist = false;
                 state.carts.map((item, index) => {
-                    if (item.id === payload.id) {
+                    if (item.productId === payload.productId) {
                         state.carts[index].quantity += 1;
                         isExist = true;
                     }
@@ -45,8 +45,8 @@ export const cartReducer = (state = initialState, { type, payload }) => {
                 cartItemCount: state.cartItemCount + 1
             }
         case ActionType.DECREASE_QUANTITY: {
-            
-            const existingIndex = state.carts.findIndex(item => item.id === payload.id);
+
+            const existingIndex = state.carts.findIndex(item => item.productId === payload.productId);
             if (existingIndex === -1) return state;
 
             let updatedCarts = [...state.carts];
@@ -61,7 +61,7 @@ export const cartReducer = (state = initialState, { type, payload }) => {
                     quantity: currentItem.quantity - 1
                 }
             } else {
-                updatedCarts = updatedCarts.filter(item => item.id !== payload.id);
+                updatedCarts = updatedCarts.filter(item => item.productId !== payload.productId);
             }
             return {
                 ...state,
@@ -71,7 +71,7 @@ export const cartReducer = (state = initialState, { type, payload }) => {
         }
 
         case ActionType.INCREASE_QUANTITY: {
-            const existingIndex = state.carts.findIndex(item => item.id === payload.id);
+            const existingIndex = state.carts.findIndex(item => item.productId === payload.productId);
             if (existingIndex === -1) return state;
 
             let updatedCarts = [...state.carts];
@@ -83,7 +83,7 @@ export const cartReducer = (state = initialState, { type, payload }) => {
                 ...currentItem,
                 quantity: currentItem.quantity + 1
             }
-            
+
             return {
                 ...state,
                 carts: updatedCarts,
@@ -107,9 +107,13 @@ export const cartReducer = (state = initialState, { type, payload }) => {
 
         }
         case ActionType.EMPTY_CART:
-            return {
-                ...initialState
-            }
+            state = {
+                cartItemCount: 0,
+                carts: [],
+                cartTotalQuantity: 0,
+                cartTotalAmount: 0
+            };
+            return state;
 
         default:
             return state;
