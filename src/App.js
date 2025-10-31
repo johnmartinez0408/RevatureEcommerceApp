@@ -12,6 +12,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import LoginPage from './components/Pages/Login/LoginPage';
 import RegistrationPage from './components/Pages/Registration/RegistrationPage';
 import CartPage from './components/Pages/Cart/CartPage';
+import OrderPlaced from './components/Pages/OrderPlaced/OrderPlacedPage';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/register" element={<RegistrationPage/>}/>
             <Route path="/cart" element={<CartPage/>}/>
+            <Route path="/order-placed" element={<OrderPlaced/>}/>
           </Routes>
         </BrowserRouter>
      

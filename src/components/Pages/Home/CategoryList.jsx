@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import Category from "./Category";
+import { useNavigate } from "react-router-dom";
 
 const CategoryList = ()=>{
     
     const [categories, setCategories] = useState([]);
-    const token = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0b255QGV4YW1wbGUuY29tIiwiaWF0IjoxNzYxODI5MTA1LCJleHAiOjE3NjE5MTU1MDV9.8TJ5ml5OqM7fNGdZ6hIdjQD4wXcw7tk281VadWEc55k1bE5l-RxAPHs7OYCGn87FXvmsjbVSoyCdxPOThTrWMQ";
+    const navigate = useNavigate();
 
-    const getData = ()=>{
+    const getData = (token)=>{
         fetch("http://localhost:9101/api/category", {
             method: 'get',
             headers: new Headers({
@@ -15,11 +16,20 @@ const CategoryList = ()=>{
         })
             .then((results)=> results.json())
             .then((data)=> setCategories(data))
-            .catch((error)=>console.log(error))
+            .catch((error)=>{
+                console.log(error);
+                navigate("/login");
+            })
     }
     
     useEffect(()=>{
-        getData();
+        const token = localStorage.getItem("token")
+        if(token){
+            getData(token);
+        }else{
+            navigate("/login")
+        }
+        
     },[])
 
     return (

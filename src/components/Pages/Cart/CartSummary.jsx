@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const CartSummary = (props)=>{
     
@@ -36,7 +37,9 @@ const CartSummary = (props)=>{
             </div>
             <div className="row">
                 <div className="col-md-12 text-center">
-                    <button className="btn btn-primary marg-top-40">Proceed to Checkout</button>
+                    <Link className="btn btn-primary marg-top-40" to="/order-placed">
+                        Proceed to Checkout
+                    </Link>
                 </div>
             </div>
         </>

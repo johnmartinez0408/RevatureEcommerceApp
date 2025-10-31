@@ -11,18 +11,32 @@ const ProductsList = () => {
     //For back button
     const navigate = useNavigate();
 
-    const getData = () => {
-        fetch(`http://localhost:9104/api/product/category/${categoryId}`)
+    const getData = (token) => {
+        fetch(`http://localhost:9104/api/product/category/${categoryId}`, {
+            method: 'get',
+            headers: new Headers({
+                'Authorization': 'Bearer ' + token,
+            })
+        })
             .then((results) => results.json())
             .then((data) => {
                 setProducts(data);
                 console.log(data);
             })
-            .catch((error) => console.log(error))
+            .catch((error) => {
+                console.log(error);
+                navigate("/login");
+            })
     }
 
     useEffect(() => {
-        getData();
+        const token = localStorage.getItem("token")
+        if (token) {
+            getData(token);
+        } else {
+            navigate("/login")
+        }
+
     }, [])
 
     return (
