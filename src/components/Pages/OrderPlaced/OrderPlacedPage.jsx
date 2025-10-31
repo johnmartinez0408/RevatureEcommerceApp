@@ -35,7 +35,7 @@ const OrderPlaced = (props) => {
             let singleOrderPayload = {
                 productId: `${product.productId}`,
                 quantity: `${product.quantity}`,
-                amount: `${product.price}`,
+                amount: `${product.quantity}`,
                 paymentMethod: "CREDIT"
             }
             payload.push(singleOrderPayload)
