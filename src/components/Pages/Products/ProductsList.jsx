@@ -12,7 +12,7 @@ const ProductsList = () => {
     const navigate = useNavigate();
 
     const getData = (token) => {
-        fetch(`http://localhost:9104/api/product/category/${categoryId}`, {
+        fetch(`http://localhost:9191/api/product/category/${categoryId}`, {
             method: 'get',
             headers: new Headers({
                 'Authorization': 'Bearer ' + token,

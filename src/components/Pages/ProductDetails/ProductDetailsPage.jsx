@@ -4,26 +4,40 @@ import Navbar from "../../Common/Navbar";
 import { addToCart } from "../../redux/actions/cart-actions";
 import { useDispatch } from "react-redux";
 
+
 const ProductDetailsPage = () => {
 
     const dispatch = useDispatch();
-
     let params = useParams();
     const [product, setProduct] = useState({});
     // const productId =40;
     const productId = params.id;
-    const getData = () => {
-        fetch(`http://localhost:9104/api/product/${productId}`)
+    const getData = (token) => {
+        fetch(`http://localhost:9191/api/product/${productId}`,{
+            method: 'get',
+            headers: new Headers({
+                'Authorization': 'Bearer ' + token,
+            })
+        })
             .then((results) => results.json())
             .then((data) => {
                 setProduct(data);
                 console.log(data);
             })
-            .catch((error) => console.log(error))
+            .catch((error) => {
+                console.log(error);
+                navigate("/login");
+            })
     }
 
     useEffect(() => {
-        getData();
+        const token = localStorage.getItem("token")
+        if (token) {
+            getData(token);
+        } else {
+            navigate("/login")
+        }
+
     }, [productId])
 
     const onAddToCartHandler = () => {

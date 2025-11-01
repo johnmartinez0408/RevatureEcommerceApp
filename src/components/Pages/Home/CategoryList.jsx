@@ -8,7 +8,7 @@ const CategoryList = ()=>{
     const navigate = useNavigate();
 
     const getData = (token)=>{
-        fetch("http://localhost:9101/api/category", {
+        fetch("http://localhost:9191/api/category", {
             method: 'get',
             headers: new Headers({
                 'Authorization': 'Bearer '+token,

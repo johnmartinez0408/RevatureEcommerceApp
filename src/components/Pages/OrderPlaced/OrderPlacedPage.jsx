@@ -13,7 +13,7 @@ const OrderPlaced = (props) => {
         const payload = createOrderPayloadFromCart();
 
         //TODO fix this endpoint
-        fetch("http://localhost:9102/api/order/place-multiple", {
+        fetch("http://localhost:9191/api/order/place-multiple", {
             method: 'post',
             headers: {
                 'Authorization': 'Bearer ' + token,
